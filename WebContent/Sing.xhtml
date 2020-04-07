@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style>
+ body{
+  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #dfe6e9;  
+ }
+
+ input{   
+        width: 100%;   
+        margin: 8px;  
+        padding: 5px ;   
+        font-size: inherit;   
+        background: #81ecec;
+    } 
+    input:focus{
+     background: white;
+    }
+  form {   
+        border: 2px solid #ecf0f1;
+        margin: 30px;
+        color: #2d3436;
+        background-image: url(ben3.jpg);   
+    }
+    #A{
+      text-align: center;
+      font-size: 40px;
+      font-style: italic;
+      Color: #e84393;
+      
+    }
+    
+    .btn{
+        width: 100%; 
+        height:45px;
+        background: steelblue;  
+        color: white;    
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: 1px solid #ff7979;     
+
+    }
+    .btn:focus{
+        width: 100%; 
+        height:45px;
+        background: white;  
+        color: steelblue;    
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: 1px solid #ff7979;     
+
+    }
+    .New{
+      padding:25px;
+      background-color: #74b9ff;
+    }
+    .S{
+        padding: 10px;   
+        margin: 10px 0px;
+        border:1px solid #95afc0;
+    }
+    hr {  
+       border: 1px solid #4834d4;  
+       margin-bottom: 25px;  
+       }   
+  </style>
+</head>
+
+<body >
+  <h:form >
+    <h1 id="A"><strong>Welcome to my page</strong></h1>
+  <fieldset class="S">
+    <center>  <h1> Registration Form</h1> </center> 
+    <hr/>  
+    <div class="New">
+    <h:panelGrid columns="3">
+
+    <h:outputText value="FirstName(*):"/>
+    <h:inputText name="firstname" value="#{user.firstname}" />
+    <br/>
+
+
+   <h:outputText value="LastName(*):"/>
+   <h:inputText name="lastname" value="#{user.lastname}" />
+   <br/>
+
+
+   <h:outputText value="Gender(*):" />
+   <h:inputText name="gender" value="#{user.gender}" size="21"/>
+   <br/>
+
+
+   <h:outputText value="Your Day of Birth(*):" />
+   <h:inputSecret name="birth" value="#{user.birth}" size="21"/>
+   <br/>
+
+
+
+   <h:outputText value="Email(*):"/>
+   <h:inputText name="email" value="#{user.email}"/>
+   <br/>
+   
+   
+   <h:outputText value="Password(*):" />
+   <h:inputSecret name="password" value="#{user.password}" size="21"/>
+   <br/>
+
+
+   <h:outputText value="Phone Number:"/>
+   <h:inputText name="phone" value="#{user.phone}"/>
+   <br/>
+
+   </h:panelGrid>
+   <h:commandButton class="btn" action="#{personneManager.addUser(user.firstname,user.lastname,user.gender,user.birth,user.email,user.password,user.phone)}" value="Submit"/>
+   <h:commandButton class="btn" value="Cancel" action="Start.xhtml"/>
+ </div>
+</fieldset>
+</h:form>
+</body>
+</html>
